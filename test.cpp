@@ -29,11 +29,29 @@ public:
 
 int main()
 { 
-    YouTubeChannel ytChannel("Parsa", "Parsa");
-    ytChannel.PublishedVideoTitles.push_back("cpp");
-    ytChannel.PublishedVideoTitles.push_back("php");
-    ytChannel.PublishedVideoTitles.push_back("python");
-    ytChannel.SubscribersCount = 10;
+    string name;
+    string ownerName;
+    string temp;
+    int publishedVideoTitlesCount;
+
+    cout << "Enter Name: ";
+    cin >> name;
+    cout << "Enter OwnerName: ";
+    cin >> ownerName;
+    cout << "Enter PublishedVideoTitles Count: ";
+    cin >> publishedVideoTitlesCount;
+
+    YouTubeChannel ytChannel(name, ownerName);
+
+    cout << "Enter PublishedVideoTitles: \n";
+    for (int i=0; i <= publishedVideoTitlesCount; i++) {
+        cout << i << ": ";
+        cin >> temp;
+        ytChannel.PublishedVideoTitles.push_back(temp);
+    }
+
+    cout << "Enter Subscribers Count: ";
+    cin >> ytChannel.SubscribersCount;
     
     ytChannel.GetInfo();
 
